@@ -42,7 +42,7 @@ In appsettings.json, add your Azure Storage connection string:
 
 4. Implement Services
 BlobService.cs:
-
+```
 using Azure.Storage.Blobs;
 using Microsoft.Extensions.Configuration;
 using System.IO;
@@ -67,9 +67,9 @@ namespace SemesterTwo.Services
         }
     }
 }
-
+```
 2. TableService.cs:
-
+```
 using Azure.Data.Tables;
 using SemesterTwo.Models;
 using System.Threading.Tasks;
@@ -93,9 +93,9 @@ namespace SemesterTwo.Services
         }
     }
 }
-
+```
 3. QueueService.cs:
-
+```
 using Azure.Storage.Queues;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
@@ -118,9 +118,9 @@ namespace SemesterTwo.Services
         }
     }
 }
-
+```
 4. FileService.cs:
-
+```
 using Azure.Storage.Files.Shares;
 using Azure.Storage.Files.Shares.Models;
 using Microsoft.Extensions.Configuration;
@@ -148,10 +148,10 @@ namespace SemesterTwo.Services
         }
     }
 }
-
+```
 4. Implement Models
 CustomerProfile.cs:
-
+```
 using Azure;
 using Azure.Data.Tables;
 using System;
@@ -177,10 +177,10 @@ namespace SemesterTwo.Models
         }
     }
 }
-
+```
 5. Implement Controllers
 HomeController.cs:
-
+```
 using Microsoft.AspNetCore.Mvc;
 using SemesterTwo.Models;
 using SemesterTwo.Services;
@@ -248,10 +248,10 @@ namespace SemesterTwo.Controllers
         }
     }
 }
-
+```
 6. Implement Views
 Index.cshtml:
-
+```
 @model SemesterTwo.Models.CustomerProfile
 
 <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
@@ -276,10 +276,10 @@ Index.cshtml:
     <input type="file" name="file" />
     <button type="submit">Upload Contract</button>
 </form>
-
+```
 7. Register Services in Program.cs
 Program.cs:
-
+```
 using SemesterTwo.Services;
 namespace SemesterTwo
 {
@@ -323,3 +323,4 @@ namespace SemesterTwo
         }
     }
 }
+```
